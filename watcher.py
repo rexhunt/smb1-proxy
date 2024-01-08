@@ -14,8 +14,11 @@ while True:
     elif not shareEnable == "1":
       continue
 
-    shareDirectory = '/share{}'.format(i)
-    remoteMount = '/remote{}'.format(i)
+
+#Swapped share and remote to move files from v2 to v1
+
+    shareDirectory = '/remote{}'.format(i)
+    remoteMount = '/share{}'.format(i)
 
     files = glob.glob(shareDirectory + '/*.*')
     for file in files:
@@ -26,7 +29,7 @@ while True:
       try:
         print(datetime.datetime.now()," - Move File: '" + file + "' -> '" + remotePath + "'")
         shutil.copyfile(file, remotePath)
-        os.remove(file)
+        #os.remove(file)
       except (FileNotFoundError, OSError) as err:
         print("↳ " + str(err))
   time.sleep(15)

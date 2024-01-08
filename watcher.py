@@ -3,7 +3,7 @@
 import glob, os, shutil, time, datetime
 
 print('File watcher started')
-
+'''
 while True:
   i = 0
   while True:
@@ -33,3 +33,4 @@ while True:
       except (FileNotFoundError, OSError) as err:
         print("↳ " + str(err))
   time.sleep(15)
+'''

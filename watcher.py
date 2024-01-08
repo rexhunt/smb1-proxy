@@ -3,9 +3,10 @@
 import glob, os, shutil, time, datetime
 
 print('File watcher started')
-'''
+
 while True:
   i = 0
+  '''
   while True:
     i = i + 1
     shareEnable = os.getenv('PROXY{}_ENABLE'.format(i))
@@ -32,5 +33,6 @@ while True:
         #os.remove(file)
       except (FileNotFoundError, OSError) as err:
         print("↳ " + str(err))
+  '''
   time.sleep(15)
-'''
+
